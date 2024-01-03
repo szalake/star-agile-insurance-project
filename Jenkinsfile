@@ -58,14 +58,14 @@ node{
             echo "Image push complete"
         }
     } 
-}
+
  node('kubernetesMaster') {   
     stage ('Deploy to kubernetes') 
           { 
                sh "kubectl get pods -o wide"        
           }
           
-
+ }
     
     
    /* stage('Pushing it ot the DockerHub'){
