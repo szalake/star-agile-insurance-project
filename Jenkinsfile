@@ -11,6 +11,7 @@ node{
         mavenHome = tool name: 'maven' , type: 'maven'
         mavenCMD = "${mavenHome}/bin/mvn"
         docker = tool name: 'docker' , type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
+        dockerhub = tool name: 'dockerhub' , type: ''org.jenkinsci.plugins.plaincredentials.StringCredentials'
         dockerCMD = "${docker}/bin/docker"
         tagName="3.0"
     }
