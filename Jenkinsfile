@@ -58,6 +58,10 @@ node{
             echo "Image push complete"
         }
     }
+    stage('Deploy to kubernetes){
+                       
+          }
+          
 
     
     
