@@ -8,6 +8,7 @@ node{
     def containerName="insuranceproj"
     def tag="latest"
     def dockerHubUser="sharmilagaikwad29"
+    def password="Aadi123tva$"
 
     
     stage('prepare enviroment'){
