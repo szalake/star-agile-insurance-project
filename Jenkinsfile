@@ -63,7 +63,7 @@ node{
     
     stage('Pushing it ot the DockerHub'){
         echo 'Pushing the docker image to DockerHub'
-        withCredentials([string(credentialsId: 'dockerhubaccount', variable: 'Password')]) {
+        withDockerRegistry(credentialsId: 'dockerhubaccount', toolName: 'docker', url: 'https://hub.docker.com/repositories/sharmilagaikwad29') {
         sh "${dockerCMD} login -u sharmilagaikwad29 -p ${Password}"
         sh "${dockerCMD} push sharmilagaikwad29/insuranceproj:${tagName}"
             
