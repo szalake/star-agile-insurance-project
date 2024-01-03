@@ -5,6 +5,10 @@ node{
     def docker
     def dockerCMD
     def tagName
+    def containerName="insuranceproj"
+    def tag="latest"
+    def dockerHubUser="sharmilagaikwad29"
+
     
     stage('prepare enviroment'){
         echo 'initialize all the variables'
@@ -42,7 +46,8 @@ node{
     
     stage('Containerize the application'){
         echo 'Creating Docker image'
-        sh "${dockerCMD} build -t sharmilagaikwad29/insuranceproj:${tagName} ."
+         sh "docker build -t $containerName:$tag --pull --no-cache ."
+       // sh "${dockerCMD} build -t sharmilagaikwad29/insuranceproj:${tagName} ."
     }
    stage('Push to Docker Registry'){
         withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
