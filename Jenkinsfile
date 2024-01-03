@@ -57,8 +57,10 @@ node{
             sh "docker push $dockerUser/$containerName:$tag"
             echo "Image push complete"
         }
-    }
-    stage('Deploy to kubernetes){
+    } 
+    
+    stage ('Deploy to kubernetes') 
+          { 
                sh "kubectl get pods -o wide"        
           }
           
