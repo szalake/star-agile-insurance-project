@@ -7,7 +7,7 @@ node{
     def tagName
     def containerName="insuranceproj"
     def tag="latest"
-    def dockerHubUser="sharmilagaikwad29"
+    def dockerUser="sharmilagaikwad29"
   
 
     
@@ -50,24 +50,24 @@ node{
          sh "docker build -t $containerName:$tag --pull --no-cache ."
        // sh "${dockerCMD} build -t sharmilagaikwad29/insuranceproj:${tagName} ."
     }
-  /* stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerhubtoken', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
+   stage('Push to Docker Registry'){
+        withCredentials([usernamePassword(credentialsId: 'dockerhubaccount', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
             sh "docker login -u $dockerUser -p $dockerPassword"
             sh "docker tag $containerName:$tag $dockerUser/$containerName:$tag"
             sh "docker push $dockerUser/$containerName:$tag"
             echo "Image push complete"
         }
-    }*/
+    }
 
     
     
-    stage('Pushing it ot the DockerHub'){
+   /* stage('Pushing it ot the DockerHub'){
         echo 'Pushing the docker image to DockerHub'
         withDockerRegistry(credentialsId: 'dockerhubaccount', toolName: 'docker', url: 'https://hub.docker.com/repositories/sharmilagaikwad29') {
         sh "${dockerCMD} login -u sharmilagaikwad29 -p ${Password}"
         sh "${dockerCMD} push sharmilagaikwad29/insuranceproj:${tagName}"
             
-        }
+        }*/
         
   /*  stage('Configure and Deploy to the test-server'){
         ansiblePlaybook become: true, credentialsId: 'ansible-key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml'
