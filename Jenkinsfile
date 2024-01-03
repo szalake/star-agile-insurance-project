@@ -50,7 +50,7 @@ node{
        // sh "${dockerCMD} build -t sharmilagaikwad29/insuranceproj:${tagName} ."
     }
    stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
+        withCredentials([usernamePassword(credentialsId: 'dockerhubtoken', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
             sh "docker login -u $dockerUser -p $dockerPassword"
             sh "docker tag $containerName:$tag $dockerUser/$containerName:$tag"
             sh "docker push $dockerUser/$containerName:$tag"
