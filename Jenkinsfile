@@ -63,7 +63,7 @@ node{
  node('kub-deployment') {   
     stage ('Deploy to kubernetes') 
           { 
-               sh "kubectl get pods -o wide"        
+               sh "sudo kubectl get pods -o wide"        
           }
           
  }
