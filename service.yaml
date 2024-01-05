@@ -11,5 +11,5 @@ spec:
     nodePort: 30008
  selector:
   author: sharmila
-  type: reverse-proxy
+  type: proxy
 ...
