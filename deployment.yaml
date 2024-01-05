@@ -20,6 +20,6 @@ spec:
         - name: insurance
           image: sharmilagaikwad29/insuranceproj
           ports:
-            - ContainerPort: 3306
+            - ContainerPort: 8083
               hostPort: 8080
 ...			  
