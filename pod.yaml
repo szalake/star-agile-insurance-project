@@ -5,7 +5,7 @@ metadata:
  name: insurance-pod
  labels:
   author: sharmila
-  type: reverse-proxy
+  type: proxy
 spec:
  containers:
   - name: appserver
