@@ -2,24 +2,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: insurance-deployment
+  name: insurance
   labels:
-    type: proxy
+    app: insurance-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      type: proxy
+      product: vehicle
   template:
     metadata:
-      name: insurance-pod
       labels:
-        type: proxy
+        product: vehicle
     spec:
       containers:
-        - name: insurance
-          image: sharmilagaikwad29/insuranceproj
+        - name: insurance-app
+          image: sharmilagaikwad29/insuranceproj:latest
           ports:
-            - ContainerPort: 8081
-              hostPort: 8081
-...			  
+            - containerPort: 8081
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1600Mi
+            requests:
+              cpu: 500m
+              memory: 300Mi
