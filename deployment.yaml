@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: insurance-app
-          image: sharmilagaikwad29/insuranceproj:latest
+          image: sharmilagaikwad29/insuranceproj
           ports:
             - containerPort: 8081
           resources:
