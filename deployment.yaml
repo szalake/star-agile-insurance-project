@@ -21,5 +21,3 @@ spec:
           image: sharmilagaikwad29/insuranceproj
           ports:
             - containerport: 8081
-...            
-            
